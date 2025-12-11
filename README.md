@@ -2,11 +2,6 @@
 
 A complete, production-ready full-stack ticket booking application built with modern technologies. The system handles concurrent bookings, prevents overbooking, and provides a seamless user experience with a professional UI.
 
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
-![License](https://img.shields.io/badge/License-ISC-blue)
-![Node Version](https://img.shields.io/badge/Node-16+-green)
-![React Version](https://img.shields.io/badge/React-18+-blue)
-
 ---
 
 ## 🎯 Project Overview
@@ -558,6 +553,4 @@ npm run lint
 ---
 
 **Let's build the future of ticket booking! 🎫✨**
-#   M o v i e - T i c k e t - B o o k i n g  
- #   M o v i e - T i c k e t - B o o k i n g  
- 
+#
