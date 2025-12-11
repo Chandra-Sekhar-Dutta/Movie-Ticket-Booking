@@ -2,7 +2,7 @@
 
 A complete, production-ready full-stack ticket booking application built with modern technologies. The system handles concurrent bookings, prevents overbooking, and provides a seamless user experience with a professional UI.
 
-> Frontend Hostel URL : 
+> Frontend Hostel URL : https://movie-ticket-booking-frontend-cyan.vercel.app/
 > Backend Hosted URL : https://movie-ticket-booking-mocha.vercel.app/
 
 ---
