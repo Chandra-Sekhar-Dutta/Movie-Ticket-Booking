@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Film, Zap, Star, Shield, Zap as ZapIcon, Clock, ArrowRight } from 'lucide-react';
+import { Sparkles, Film, Zap, Star, Shield, Zap as ZapIcon, ArrowRight } from 'lucide-react';
 import { ShowCard } from '../components/Cards';
 import { Loading, EmptyState } from '../components/UIElements';
 import { useShow } from '../context/ShowContext';

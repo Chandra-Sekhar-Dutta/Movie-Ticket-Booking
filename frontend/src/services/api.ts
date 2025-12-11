@@ -12,7 +12,6 @@ import type {
   CreateMovieRequest,
   CreateShowRequest,
   ConfirmBookingRequest,
-  PaginatedResponse,
 } from '../types';
 
 // Transform snake_case from backend to camelCase for frontend
@@ -74,7 +73,7 @@ class ApiClient {
   private baseURL: string;
 
   constructor() {
-    this.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+    this.baseURL = (import.meta.env.VITE_API_BASE_URL as string) || 'http://localhost:5000/api';
     this.client = axios.create({
       baseURL: this.baseURL,
       headers: {
@@ -146,7 +145,7 @@ class ApiClient {
     const response = await this.client.post<ApiResponse<any>>('/movies', data);
     return {
       ...response.data,
-      data: response.data.data ? transformMovie(response.data.data) : null,
+      data: response.data.data ? transformMovie(response.data.data) : undefined,
     };
   }
 
@@ -162,7 +161,7 @@ class ApiClient {
     const response = await this.client.get<ApiResponse<any>>(`/movies/${id}`);
     return {
       ...response.data,
-      data: response.data.data ? transformMovie(response.data.data) : null,
+      data: response.data.data ? transformMovie(response.data.data) : undefined,
     };
   }
 
@@ -170,7 +169,7 @@ class ApiClient {
     const response = await this.client.put<ApiResponse<any>>(`/movies/${id}`, data);
     return {
       ...response.data,
-      data: response.data.data ? transformMovie(response.data.data) : null,
+      data: response.data.data ? transformMovie(response.data.data) : undefined,
     };
   }
 
@@ -184,7 +183,7 @@ class ApiClient {
     const response = await this.client.post<ApiResponse<any>>('/shows', data);
     return {
       ...response.data,
-      data: response.data.data ? transformShow(response.data.data) : null,
+      data: response.data.data ? transformShow(response.data.data) : undefined,
     };
   }
 
@@ -208,7 +207,7 @@ class ApiClient {
     const response = await this.client.get<ApiResponse<any>>(`/shows/${id}`);
     return {
       ...response.data,
-      data: response.data.data ? transformShow(response.data.data) : null,
+      data: response.data.data ? transformShow(response.data.data) : undefined,
     };
   }
 
@@ -216,7 +215,7 @@ class ApiClient {
     const response = await this.client.put<ApiResponse<any>>(`/shows/${id}`, data);
     return {
       ...response.data,
-      data: response.data.data ? transformShow(response.data.data) : null,
+      data: response.data.data ? transformShow(response.data.data) : undefined,
     };
   }
 

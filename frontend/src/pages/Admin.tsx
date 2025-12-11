@@ -163,10 +163,9 @@ const MovieManagement: React.FC<MovieManagementProps> = ({ onError, onSuccess })
         title: formData.title,
         description: formData.description,
         genre: formData.genre,
-        rating: 8.0,
-        duration_minutes: parseInt(formData.duration_minutes),
-        poster_url: formData.poster_url,
-        release_date: formData.release_date,
+        duration: parseInt(formData.duration_minutes),
+        posterUrl: formData.poster_url,
+        releaseDate: formData.release_date,
       });
 
       onSuccess('Movie created successfully!');
@@ -411,13 +410,12 @@ const ShowManagement: React.FC<ShowManagementProps> = ({ onError, onSuccess }) =
     try {
       setIsLoading(true);
       await apiClient.createShow({
-        movie_id: parseInt(formData.movie_id),
-        show_date: formData.show_date,
-        show_time: formData.show_time,
-        screen_name: 'Screen 1',
-        total_seats: parseInt(formData.total_seats),
-        price_standard: parseFloat(formData.price_standard),
-        price_premium: parseFloat(formData.price_premium),
+        movieId: formData.movie_id,
+        date: formData.show_date,
+        showTime: formData.show_time,
+        totalSeats: parseInt(formData.total_seats),
+        standardPrice: parseFloat(formData.price_standard),
+        premiumPrice: parseFloat(formData.price_premium),
       });
 
       onSuccess('Show created successfully!');
@@ -454,7 +452,7 @@ const ShowManagement: React.FC<ShowManagementProps> = ({ onError, onSuccess }) =
   };
 
   const getMovieTitle = (movieId: number) => {
-    return movies.find((m) => m.id === movieId)?.title || 'Unknown Movie';
+    return movies.find((m) => parseInt(m.id) === movieId)?.title || 'Unknown Movie';
   };
 
   return (
@@ -587,7 +585,7 @@ const ShowManagement: React.FC<ShowManagementProps> = ({ onError, onSuccess }) =
             <div key={show.id} className="card p-4">
               <div className="flex items-center justify-between">
                 <div className="flex-1">
-                  <h3 className="font-bold text-lg text-primary">{getMovieTitle(show.movieId)}</h3>
+                  <h3 className="font-bold text-lg text-primary">{getMovieTitle(parseInt(show.movieId))}</h3>
                   <p className="text-sm text-gray-600">
                     {formatDateTime(show.date, show.showTime)}
                   </p>

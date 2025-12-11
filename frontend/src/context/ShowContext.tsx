@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useCallback, ReactNode, useEffect } from 'react';
-import type { Show, Movie } from '../types';
+import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import type { Show } from '../types';
 import { apiClient } from '../services/api';
 
 interface ShowContextType {

@@ -68,7 +68,7 @@ export const BookingProvider: React.FC<{ children: ReactNode }> = ({ children })
       if (response.data) {
         setCurrentBooking(response.data);
         setBookings(
-          bookings.map((b) => (b.id === bookingId ? response.data : b))
+          bookings.map((b) => (b.id === bookingId ? response.data! : b))
         );
         return response.data;
       }
