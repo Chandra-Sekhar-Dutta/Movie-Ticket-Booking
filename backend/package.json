@@ -1,0 +1,33 @@
+{
+  "name": "bookmyshow-backend",
+  "version": "1.0.0",
+  "description": "BookMyShow Movie Ticket Booking System - Backend API",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "db:init": "node database/init.js",
+    "db:seed": "node database/seed.js"
+  },
+  "keywords": [
+    "ticket-booking",
+    "movie",
+    "express",
+    "postgresql"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.11.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
